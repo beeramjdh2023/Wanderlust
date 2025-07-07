@@ -1,0 +1,49 @@
+<% layout("layouts/boilerplate.ejs") %>
+  <div class="row mt-2">
+     <div class="col-8 offset-2">
+     <form action="/listings/<%=listing._id %>/edit?_method=PUT" class="needs-validation" novalidate method="post" enctype="multipart/form-data">
+          <div>
+               <label for="title">Title</label>
+               <input name="listing[title]" class="form-control" required value="<%=listing.title%>">
+               <div class="invalid-feedback">Please enter tittle</div> 
+              </div>
+          <div>
+          <label for="description">Description</label>
+          <input name="listing[description]" class="form-control" required value="<%=listing.description %>">
+          <div class="invalid-feedback">enter description</div>
+        </div>
+      
+        <div class="mt-2 mb-2">
+          <img src="<%=originalurl%>" alt="Image not fetched">
+        </div>
+
+        <div >
+          <label for="image">Upload Image</label>
+          <input name="listing[image]" class="form-control" type="file">
+          <div class="invalid-feedback">enter valid Image</div>
+        </div>
+
+        <div class="row">
+        <div class="col-md-4">
+          <label for="price">Price</label>
+          <input name="listing[price]" class="form-control" required value="<%=listing.price%>">
+          <div class="invalid-feedback">enter valid price</div>
+        </div>
+             
+        <div class="col-md-8">
+          <label for="country">Country</label>
+          <input name="listing[country]" class="form-control" required value="<%=listing.country %>">
+          <div class="invalid-feedback">enter valid country</div>
+        </div>
+    
+        </div>
+        <div>
+          <label for="location">Location</label>
+          <input name="listing[location]" class="form-control" required value="<%=listing.location %>">
+          <div class="invalid-feedback">enter valid location</div>
+        </div>
+          
+     <button class="btn btn-dark mt-2 new-btn">Edit</button>
+     </form>
+</div>
+</div>
