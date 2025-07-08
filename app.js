@@ -91,9 +91,9 @@ connection_to_db()
     console.log(err);
 })
 
-app.get("/",(req,res)=>{
-    res.send("root working");
-})
+// app.get("/",(req,res)=>{
+//     res.send("root working");
+// })
 
 app.get("/demouser",async(req,res,next)=>{
     let fakeuser=new User({
