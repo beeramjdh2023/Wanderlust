@@ -83,6 +83,10 @@ app.use("/listings",listingroute);
 app.use("/listings/:id/review",reviewroute);
 app.use("/",userroute);
 
+app.get("/",(req,res)=>{
+    res.redirect("/listings");
+})
+
 connection_to_db()
 .then((result)=>{
     console.log("connected to database");
@@ -91,9 +95,6 @@ connection_to_db()
     console.log(err);
 })
 
-// app.get("/",(req,res)=>{
-//     res.send("root working");
-// })
 
 app.get("/demouser",async(req,res,next)=>{
     let fakeuser=new User({
